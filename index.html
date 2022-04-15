@@ -12,7 +12,16 @@
   </head>
   <body>
     <div id="app">
+      <div class="container">
+        <div class="container mt-5 d-flex justify-content-between">
+          <button class="btn btn-dark" >All books</button>
+          <button class="btn btn-success">Completed</button>
+          <button class="btn btn-danger">Uncompleted</button>
+          <input type="number" placeholder="Price">
+      </div>
+      </div>
         <div class="container rounded-lg bg-dark my-5 mt-2">
+          
           <table class="table table-hover">
             <thead>
                 <th class="text-white">Author</th>
@@ -23,12 +32,12 @@
               
             </thead>
             <tbody>
-              <tr v-for="(book, index) in books">
+              <tr v-for="(book, index) in books" :style="{backgroundColor: book.completed ? 'green':'red'}">
                   <td class="text-white">{{book.author}}</td>
                   <td class="text-white">{{book.name}}</td>
                   <td class="text-white">{{book.price}}</td>
                   <td class="text-white">{{book.completed}}</td>
-                  <td class="text-white">{{book.index}}</td>                
+                  <td class="text-white">{{index}}</td>                
               </tr>              
             </tbody>
           </table>
