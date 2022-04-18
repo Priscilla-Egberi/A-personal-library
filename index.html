@@ -14,9 +14,9 @@
     <div id="app">
       <div class="container">
         <div class="container mt-5 d-flex justify-content-between">
-          <button class="btn btn-dark" >All books</button>
-          <button class="btn btn-success">Completed</button>
-          <button class="btn btn-danger">Uncompleted</button>
+          <button class="btn btn-dark" v-on:click="getAllBooks">All books</button>
+          <button class="btn btn-success" @click="getBooksCompleted">Completed</button>
+          <button class="btn btn-danger" @click="getBooksUncompleted">Uncompleted</button>
           <input type="number" placeholder="Price">
       </div>
       </div>
@@ -32,7 +32,7 @@
               
             </thead>
             <tbody>
-              <tr v-for="(book, index) in books" :style="{backgroundColor: book.completed ? 'green':'red'}">
+              <tr v-for="(book, index) in allBooks" :style="{backgroundColor: book.completed ? 'green':'red'}">
                   <td class="text-white">{{book.author}}</td>
                   <td class="text-white">{{book.name}}</td>
                   <td class="text-white">{{book.price}}</td>

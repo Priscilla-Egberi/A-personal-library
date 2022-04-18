@@ -11,8 +11,33 @@ const updates = Vue.createApp({
                 { author:"Bright", name: "Brighter Grammar", price:160, completed:true},
                 { author:"Lucifer", name: "The devil's handbook", price:0, completed:false}
             ],
+            allBooks:null,
         };
     },
+    // all functions are declared here
+    methods:{
+        // to display all books when button is pressed
+        getAllBooks(){
+            this.allBooks= this.books;
+        },
+        // to display completed books when button is pressed
+        getBooksCompleted(){
+            this.allBooks= this.books.filter((book)=> book.completed)
+        },
+        // to display uncompleted books when button is pressed
+        getBooksUncompleted(){
+            this.allBooks= this.books.filter((book)=> !book.completed)
+        },
+        // to display the book with the price inputed in
+        
+
+    },
+
+    // functions are called here
+    // to display all the books when page is load
+    created() {
+            this.getAllBooks();
+        }
 });
 
 updates.mount("#app");
