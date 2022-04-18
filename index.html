@@ -17,7 +17,7 @@
           <button class="btn btn-dark" v-on:click="getAllBooks">All books</button>
           <button class="btn btn-success" @click="getBooksCompleted">Completed</button>
           <button class="btn btn-danger" @click="getBooksUncompleted">Uncompleted</button>
-          <input type="number" placeholder="Price">
+          <input type="number" placeholder="Price" v-model="currentValue" @keyUp="searchForValue">
       </div>
       </div>
         <div class="container rounded-lg bg-dark my-5 mt-2">

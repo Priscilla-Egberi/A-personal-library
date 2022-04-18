@@ -14,7 +14,7 @@ const updates = Vue.createApp({
             allBooks:null,
         };
     },
-    // all functions are declared here
+    // all functions are decleared here
     methods:{
         // to display all books when button is pressed
         getAllBooks(){
@@ -29,7 +29,17 @@ const updates = Vue.createApp({
             this.allBooks= this.books.filter((book)=> !book.completed)
         },
         // to display the book with the price inputed in
-        
+        searchForValue(e) {
+            let currentValue = e.target.value;
+            if (currentValue !== "") {
+                let foundPrice = this.allBooks.filter(
+                    (book) => book.price == currentValue
+                )
+                this.allBooks=foundPrice
+            } else {
+                this.allBooks=this.books
+            }
+        }
 
     },
 
